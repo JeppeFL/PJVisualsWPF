@@ -27,7 +27,7 @@ namespace PJVisualsWPFTest.Models
         //Gemmer kunden til tekstfil
         public void GemKundeTilFil(Kunde kunde)
         {
-            string filSti = "C:\\Users\\lefal\\Desktop\\PJVisualRepository\\KundeRepository.txt";
+            string filSti = "KundeRepository.txt";
 
             using (StreamWriter nyKunde = new StreamWriter(filSti, true))
             {
@@ -38,7 +38,7 @@ namespace PJVisualsWPFTest.Models
         //Henter kunden fra 
         public void HentKundeFraFil()
         {
-            string filSti = "C:\\Users\\lefal\\Desktop\\PJVisualRepository\\KundeRepository.txt";
+            string filSti = "KundeRepository.txt";
 
             try
             {
