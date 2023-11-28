@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PJVisualsWPFTest.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,14 @@ namespace PJVisualsWPFTest.Views
     /// </summary>
     public partial class KundeView : Window
     {
+        
+        NyKundeViewModel nkvm = new NyKundeViewModel();
+        
         public KundeView()
         {
+            DataContext = nkvm;
             InitializeComponent();
+
         }
 
         private void btnNyKunde_Click(object sender, RoutedEventArgs e)
