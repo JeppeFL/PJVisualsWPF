@@ -1,0 +1,22 @@
+﻿<Window x:Class="PJVisualsWPFTest.Views.KundeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PJVisualsWPFTest.Views"
+        mc:Ignorable="d"
+        Title="KundeView" Height="450" Width="800">
+    <Grid>
+        <ListBox ItemsSource="{Binding KundeVM}" Margin="535,47,58,47" BorderBrush="Blue" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Path= VirksomhedsNavn}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnNyKunde" Content="Opret ny kunde!" HorizontalAlignment="Left" Margin="74,60,0,0" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18" FontWeight="Bold" Click="btnNyKunde_Click"/>
+
+    </Grid>
+</Window>

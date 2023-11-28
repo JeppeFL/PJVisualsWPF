@@ -1,0 +1,38 @@
+﻿<Window x:Class="PJVisualsWPFTest.Views.KampagneView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PJVisualsWPFTest.Views"
+        mc:Ignorable="d"
+        Title="KampagneView" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF95D5F7" Offset="0"/>
+                <GradientStop Color="#FFE8F1F6" Offset="0.372"/>
+                <GradientStop Color="#FFFCFEFE" Offset="0.995"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="lblKampagner" Content="Kampagner" HorizontalAlignment="Left" Margin="65,19,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="btnNyKampagne" Content="Ny kunde" HorizontalAlignment="Left" Margin="84,107,0,0" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18" FontWeight="Bold" Click="btnNyKampagne_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" ShadowDepth="5" BlurRadius="10" Opacity=".5">
+
+                </DropShadowEffect>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnAktuelle" Content="Aktuelle" HorizontalAlignment="Left" Margin="84,190,0,0" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18" Click="lblProjekt_Copy_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" ShadowDepth="5" BlurRadius="10" Opacity=".5"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnGamle" Content="Gamle" HorizontalAlignment="Left" Margin="84,277,0,0" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" ShadowDepth="5" BlurRadius="10" Opacity=".5"/>
+            </Button.Effect>
+        </Button>
+
+
+    </Grid>
+</Window>
