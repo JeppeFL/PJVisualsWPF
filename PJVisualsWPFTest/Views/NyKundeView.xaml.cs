@@ -63,5 +63,7 @@ namespace PJVisualsWPFTest.Views
             //Annuller - Gå tilbage til forrige skærm/Luk nuværende skærm'
             this.Close();
         }
+
+      
     }
 }

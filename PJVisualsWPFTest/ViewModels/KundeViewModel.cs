@@ -69,7 +69,7 @@ namespace PJVisualsWPFTest.ViewModels
 
         public ICommand GemKundeCmd { get; set; } = new GemKundeCommand();
 
-        //SelectedKune
+        //SelectedKunde
         private KundeViewModel selectedKunde;
 
        

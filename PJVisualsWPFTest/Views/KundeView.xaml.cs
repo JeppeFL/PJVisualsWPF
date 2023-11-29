@@ -26,8 +26,9 @@ namespace PJVisualsWPFTest.Views
         
         public KundeView()
         {
-            DataContext = nkvm;
+            
             InitializeComponent();
+            DataContext = nkvm;
 
         }
 
