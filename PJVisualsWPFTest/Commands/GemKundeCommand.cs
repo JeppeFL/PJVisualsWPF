@@ -23,7 +23,7 @@ namespace PJVisualsWPFTest.Commands
         public bool CanExecute(object? parameter)
         {
             bool result = true;
-            if (parameter is KundeViewModel kundeViewModel)
+            if (parameter is NyKundeViewModel kundeViewModel)
             {
                 if (string.IsNullOrEmpty(kundeViewModel.VirksomhedsNavn))
                     result = false;
@@ -45,7 +45,7 @@ namespace PJVisualsWPFTest.Commands
         public void Execute(object? parameter)
         {
          
-            if (parameter is KundeViewModel kundeViewModel) 
+            if (parameter is NyKundeViewModel kundeViewModel) 
             {
                 //GemKunde
                 Kunde nyKunde = new Kunde(kundeViewModel.VirksomhedsNavn, kundeViewModel.Navn, kundeViewModel.Email, kundeViewModel.Telefonnummer);

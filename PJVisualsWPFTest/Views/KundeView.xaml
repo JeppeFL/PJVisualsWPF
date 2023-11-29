@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="KundeView" Height="450" Width="800">
     <Grid>
-        <ListBox ItemsSource="{Binding KundeVM}" SelectedItem="{Binding SelectedKunde}" Margin="0,0,554,54" BorderBrush="#FFF7F7F7" SelectionChanged="ListBox_SelectionChanged" Background="#FFF7F7F7">
+        <ListBox ItemsSource="{Binding NyKundeVM}" SelectedItem="{Binding SelectedKunde}" Margin="0,0,554,54" BorderBrush="#FFF7F7F7" SelectionChanged="ListBox_SelectionChanged" Background="#FFF7F7F7">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

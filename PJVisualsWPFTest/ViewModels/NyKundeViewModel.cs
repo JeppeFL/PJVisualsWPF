@@ -1,4 +1,5 @@
-﻿using PJVisualsWPFTest.Models;
+﻿using PJVisualsWPFTest.Commands;
+using PJVisualsWPFTest.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,29 +7,87 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PJVisualsWPFTest.ViewModels
 {
     public class NyKundeViewModel : INotifyPropertyChanged
     {
 
+        private Kunde kunde;
+
+        private string virksomhedsNavn;
+        public string VirksomhedsNavn
+        {
+            get { return virksomhedsNavn; }
+            set
+            {
+                virksomhedsNavn = value;
+                OnPropertyChanged("VirksomhedsNavn");
+            }
+        }
+
+        private string navn;
+        public string Navn
+        {
+            get { return navn; }
+            set
+            {
+                navn = value;
+                OnPropertyChanged("Navn");
+            }
+        }
+        private string email;
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+                OnPropertyChanged("Email");
+            }
+        }
+        private string telefonnummer;
+        public string Telefonnummer
+        {
+            get { return telefonnummer; }
+            set
+            {
+                telefonnummer = value;
+                OnPropertyChanged("Telefonnummer");
+            }
+        }
+
+        public NyKundeViewModel(Kunde kunde)
+        {
+            VirksomhedsNavn = kunde.VirksomhedsNavn;
+            Navn = kunde.Navn;
+            Email = kunde.Email;
+            Telefonnummer = kunde.Telefonnummer;
+
+
+        }
+
+        public ICommand GemKundeCmd { get; set; } = new GemKundeCommand();
+
         private KundeRepository kundeRepository = new KundeRepository();
-        public ObservableCollection<KundeViewModel> KundeVM { get; set; } = new ObservableCollection<KundeViewModel>();
+        public ObservableCollection<NyKundeViewModel> NyKundeVM { get; set; } = new ObservableCollection<NyKundeViewModel>();
 
         public NyKundeViewModel() 
         {
             foreach (Kunde kunde in kundeRepository.GetAll())
             {
-                KundeVM.Add(new KundeViewModel(kunde));
+                NyKundeVM.Add(new NyKundeViewModel(kunde));
             }
         
         }
+
         //SelectedKunde
-        private KundeViewModel selectedKunde;
+        private NyKundeViewModel selectedKunde;
 
 
         //Til lister
-        public KundeViewModel SelectedKunde
+        public NyKundeViewModel SelectedKunde
         {
             get { return selectedKunde; }
             set

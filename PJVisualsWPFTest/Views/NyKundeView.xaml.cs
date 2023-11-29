@@ -23,38 +23,38 @@ namespace PJVisualsWPFTest.Views
     public partial class NyKundeView : Window
     {
 
-        private KundeViewModel kundeViewModel = new KundeViewModel(new Kunde("", "", "", ""));
+        NyKundeViewModel nkvm = new NyKundeViewModel();
 
         public NyKundeView()
         {
             InitializeComponent();
-            DataContext = kundeViewModel;
+            DataContext = nkvm;
         }
 
        
         private void tbNyKundeVirksomhedsnavn_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast virksomhedsnavn
-            kundeViewModel.VirksomhedsNavn = tbNyKundeVirksomhedsnavn.Text;
+            nkvm.VirksomhedsNavn = tbNyKundeVirksomhedsnavn.Text;
 
         }
 
         private void tbNyKundeNavn_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast navn
-            kundeViewModel.Navn = tbNyKundeNavn.Text;
+            nkvm.Navn = tbNyKundeNavn.Text;
         }
 
         private void tbNyKundeEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast email
-            kundeViewModel.Email = tbNyKundeEmail.Text;
+            nkvm.Email = tbNyKundeEmail.Text;
         }
 
         private void tbNyKundeTelefonnummer_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast telefonnummer
-            kundeViewModel.Telefonnummer = tbNyKundeTelefonnummer.Text;
+            nkvm.Telefonnummer = tbNyKundeTelefonnummer.Text;
 
         }
 
