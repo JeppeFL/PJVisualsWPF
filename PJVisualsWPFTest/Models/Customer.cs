@@ -7,32 +7,32 @@ using System.Windows.Markup;
 
 namespace PJVisualsWPFTest.Models
 {
-    public class Kunde
+    public class Customer
     {
         private static int idCount = 0;
 
         public int Id { get; }
-        public string VirksomhedsNavn { get; set; } = "Intet angivet";
-        public string Navn { get; set; } = "Intet angivet";
+        public string CompanyName { get; set; } = "Intet angivet";
+        public string Name { get; set; } = "Intet angivet";
         public string Email { get; set; } = "Intet angivet";
-        public string Telefonnummer { get; set; } = "Intet angivet";
+        public string Phone { get; set; } = "Intet angivet";
 
 
-        public Kunde(string virksomhedsNavn, string navn, string email, string telefonNummer)
+        public Customer(string companyName, string name, string email, string phone)
         {
-            this.VirksomhedsNavn = virksomhedsNavn;     
-            this.Navn = navn;
+            this.CompanyName = companyName;     
+            this.Name = name;
             this.Email = email;
-            this.Telefonnummer = telefonNummer;
+            this.Phone = phone;
 
         }                                                                                            
 
         public string MakeTitle()
         {
-            return $"{VirksomhedsNavn},{Navn},{Email},{Telefonnummer}";
+            return $"{CompanyName},{Name},{Email},{Phone}";
         }
 
-        public Kunde() 
+        public Customer() 
         { 
             Id = idCount++;
         }

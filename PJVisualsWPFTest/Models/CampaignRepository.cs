@@ -11,17 +11,20 @@ namespace PJVisualsWPFTest.Models
 {
     class CampaignRepository
     {
-
-        private Kunde kunde;
         private ObservableCollection<Campaign> campaigns = new ObservableCollection<Campaign>();
+        private CustomerRepository customerRepository;
 
-        public CampaignRepository() 
+        public CampaignRepository()
         {
-
-            GetCustomerFromFile();
-        
+            LoadCampaignsFromFile();
+        }
+        public CampaignRepository(CustomerRepository customerRepository)
+        {
+            this.customerRepository = customerRepository;
+            LoadCampaignsFromFile();
         }
 
+       
         public void SaveCampaignToFile(Campaign campaign)
         {
             string filePath = "CampaignRepository.txt";
@@ -31,7 +34,7 @@ namespace PJVisualsWPFTest.Models
             }
         }
 
-        public void GetCustomerFromFile()
+        public void LoadCampaignsFromFile()
         {
             string filePath = "CampaignRepository.txt";
             try
@@ -43,20 +46,23 @@ namespace PJVisualsWPFTest.Models
                     while (line != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 6)
+                        if (parts.Length == 6)
                         {
-                            this.Add(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+
+                            Customer customer = customerRepository.FindCustomerByCompanyName(parts[0]);
+
+                            double amount = double.Parse(parts[3]);
+                            DateTime dueDate = DateTime.Parse(parts[4]);
+                            bool paymentStatus = bool.Parse(parts[5]);
+
+                            this.Add(customer, parts[1], parts[2], amount, dueDate, paymentStatus);
                         }
                         else
                         {
                             Console.WriteLine("Warning: Line does not contain enough data" + line);
-
                         }
 
                         line = sr.ReadLine();
-
-
-
                     }
                 }
             }
@@ -66,47 +72,24 @@ namespace PJVisualsWPFTest.Models
             }
         }
 
-        public Campaign Add((Kunde kunde, string name, string description, double amount, DateTime DueDate, bool PaymentStatus)
+        public Campaign Add(Customer kunde, string name, string description, double amount, DateTime dueDate, bool paymentStatus)
+        {
+            if (kunde != null && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(description))
             {
-            Campaign result = null;
-
-            if (!string.IsNullOrEmpty(kunde) &&
-                !string.IsNullOrEmpty(name) &&
-                !string.IsNullOrEmpty(description) &&
-                !string.IsNullOrEmpty(amount) &&
-                !string.IsNullOrEmpty(dueDate) &&
-                !string.IsNullOrEmpty(paymentStatus))
-            {
-                result = new Campaign();
-                {
-                    Kunde = kunde,
-                    Name = name, 
-                    Description = description,
-                    Amount = amount,
-                    DueDate = dueDate,
-                    PaymentStatus = paymentStatus
-
-                };
+                Campaign result = new Campaign(kunde, name, description, amount, dueDate, paymentStatus);
                 campaigns.Add(result);
+                return result;
             }
             else
-                throw (new ArgumentException("!"));
-            return result;
+            {
+                throw new ArgumentException("Invalid arguments for creating a campaign");
+            }
         }
 
-
-
-                
-                
-                
-                
-                
-                
-                
-
-
-
-
-
+        // Eventuelt tilføje en GetAll metode, hvis nødvendigt
+        public ObservableCollection<Campaign> GetAll()
+        {
+            return campaigns;
+        }
     }
 }

@@ -48,11 +48,51 @@
         
     </Style>
 
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+       TargetType="{x:Type Button}"
+       x:Key="SaveButtonTheme">
+
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="30">
+                           
+
+                            <Grid VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch">
+
+                                <TextBlock Text="{TemplateBinding Content}"
+                               
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
+
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="268"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+
+        </Style.Setters>
 
 
-    
-    
-    
-    
-    
+
+    </Style>
+
+
+
+
+
+
 </ResourceDictionary>

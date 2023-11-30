@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PJVisualsWPFTest.Commands
 {
-    public class GemKundeCommand : ICommand
+    public class SaveCustomerCommand : ICommand
     {
         public event EventHandler CanExecuteChanged
         {
@@ -23,15 +23,15 @@ namespace PJVisualsWPFTest.Commands
         public bool CanExecute(object? parameter)
         {
             bool result = true;
-            if (parameter is NyKundeViewModel kundeViewModel)
+            if (parameter is NewCustomerViewModel customerViewModel)
             {
-                if (string.IsNullOrEmpty(kundeViewModel.VirksomhedsNavn))
+                if (string.IsNullOrEmpty(customerViewModel.CompanyName))
                     result = false;
-                if (string.IsNullOrEmpty(kundeViewModel.Navn))
+                if (string.IsNullOrEmpty(customerViewModel.Name))
                     result = false;
-                if (string.IsNullOrEmpty(kundeViewModel.Email))
+                if (string.IsNullOrEmpty(customerViewModel.Email))
                     result = false;
-                if (string.IsNullOrEmpty(kundeViewModel.Telefonnummer))
+                if (string.IsNullOrEmpty(customerViewModel.Phone))
                     result = false;
 
 
@@ -45,17 +45,17 @@ namespace PJVisualsWPFTest.Commands
         public void Execute(object? parameter)
         {
          
-            if (parameter is NyKundeViewModel kundeViewModel) 
+            if (parameter is NewCustomerViewModel customerViewModel) 
             {
                 //GemKunde
-                Kunde nyKunde = new Kunde(kundeViewModel.VirksomhedsNavn, kundeViewModel.Navn, kundeViewModel.Email, kundeViewModel.Telefonnummer);
-                KundeRepository repo = new KundeRepository();
-                repo.GemKundeTilFil(nyKunde);
+                Customer newCustomer = new Customer(customerViewModel.CompanyName, customerViewModel.Name, customerViewModel.Email, customerViewModel.Phone);
+                CustomerRepository repo = new CustomerRepository();
+                repo.SaveCustomerToFile(newCustomer);
 
-                kundeViewModel.VirksomhedsNavn = "";
-                kundeViewModel.Navn = "";
-                kundeViewModel.Email = "";
-                kundeViewModel.Telefonnummer = "";
+                customerViewModel.CompanyName = "";
+                customerViewModel.Name = "";
+                customerViewModel.Email = "";
+                customerViewModel.Phone = "";
 
                 //Når gemkunde er klikket så sættes den tilbage til udgangspunktet
               

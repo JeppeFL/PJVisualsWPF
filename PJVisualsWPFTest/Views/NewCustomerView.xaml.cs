@@ -20,12 +20,12 @@ namespace PJVisualsWPFTest.Views
     /// <summary>
     /// Interaction logic for NyKampagneView.xaml
     /// </summary>
-    public partial class NyKundeView : Window
+    public partial class NewCustomerView : Window
     {
 
-        NyKundeViewModel nkvm = new NyKundeViewModel();
+        NewCustomerViewModel nkvm = new NewCustomerViewModel();
 
-        public NyKundeView()
+        public NewCustomerView()
         {
             InitializeComponent();
             DataContext = nkvm;
@@ -35,14 +35,14 @@ namespace PJVisualsWPFTest.Views
         private void tbNyKundeVirksomhedsnavn_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast virksomhedsnavn
-            nkvm.VirksomhedsNavn = tbNyKundeVirksomhedsnavn.Text;
+            nkvm.CompanyName = tbNyKundeVirksomhedsnavn.Text;
 
         }
 
         private void tbNyKundeNavn_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast navn
-            nkvm.Navn = tbNyKundeNavn.Text;
+            nkvm.Name = tbNyKundeNavn.Text;
         }
 
         private void tbNyKundeEmail_TextChanged(object sender, TextChangedEventArgs e)
@@ -54,7 +54,7 @@ namespace PJVisualsWPFTest.Views
         private void tbNyKundeTelefonnummer_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Indtast telefonnummer
-            nkvm.Telefonnummer = tbNyKundeTelefonnummer.Text;
+            nkvm.Phone = tbNyKundeTelefonnummer.Text;
 
         }
 

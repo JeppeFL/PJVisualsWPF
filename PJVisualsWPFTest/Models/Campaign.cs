@@ -12,14 +12,14 @@ namespace PJVisualsWPFTest.Models
         private static int idCount = 0;
 
         public int Id { get; }
-        public Kunde kunde {  get; set; }
+        public Customer kunde {  get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Amount { get; set; }
         public DateTime DueDate { get; set; }
         public bool PaymentStatus { get; set; }
 
-        public Campaign (Kunde kunde, string name, string description, double amount, DateTime DueDate, bool PaymentStatus)
+        public Campaign (Customer kunde, string name, string description, double amount, DateTime DueDate, bool PaymentStatus)
         {
             this.kunde = kunde;
             this.Name = name;
@@ -32,7 +32,7 @@ namespace PJVisualsWPFTest.Models
 
         public string MakeTitle()
         {
-            return $"{kunde.VirksomhedsNavn},{Name},{Description},{Amount},{DueDate},{PaymentStatus}";
+            return $"{kunde.CompanyName},{Name},{Description},{Amount},{DueDate},{PaymentStatus}";
         }
 
         public Campaign()

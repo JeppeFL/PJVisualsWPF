@@ -19,12 +19,12 @@ namespace PJVisualsWPFTest.Views
     /// <summary>
     /// Interaction logic for KundeView.xaml
     /// </summary>
-    public partial class KundeView : Window
+    public partial class CustomerView : Window
     {
         
-        NyKundeViewModel nkvm = new NyKundeViewModel();
+        NewCustomerViewModel nkvm = new NewCustomerViewModel();
         
-        public KundeView()
+        public CustomerView()
         {
             
             InitializeComponent();
@@ -35,8 +35,8 @@ namespace PJVisualsWPFTest.Views
         private void btnNyKunde_Click(object sender, RoutedEventArgs e)
         {
 
-            NyKundeView nyKampagneView = new NyKundeView();
-            nyKampagneView.Show();
+            NewCustomerView newCampaignView = new NewCustomerView();
+            newCampaignView.Show();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

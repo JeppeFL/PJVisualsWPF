@@ -30,10 +30,14 @@ namespace PJVisualsWPFTest
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            KundeView kundeView = new KundeView();  
+            CustomerView kundeView = new CustomerView();  
             kundeView.Show();
         }
 
-       
+        private void btnProjekter_Click(object sender, RoutedEventArgs e)
+        {
+            CampaignView campaignView = new CampaignView();
+            campaignView.Show();
+        }
     }
 }
