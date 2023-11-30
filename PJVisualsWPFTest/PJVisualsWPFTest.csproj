@@ -9,11 +9,13 @@
 
   <ItemGroup>
     <None Remove="PJVisualsLogo.png" />
+    <None Remove="Views\PJVisualsLogo.png" />
     <None Remove="Views\ProfilBilledePlaceholder.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="PJVisualsLogo.png" />
+    <Resource Include="Views\PJVisualsLogo.png" />
     <Resource Include="Views\ProfilBilledePlaceholder.png" />
   </ItemGroup>
 

@@ -15,22 +15,20 @@ using System.Windows.Shapes;
 namespace PJVisualsWPFTest.Views
 {
     /// <summary>
-    /// Interaction logic for KampagneView.xaml
+    /// Interaction logic for CampaignView.xaml
     /// </summary>
-    public partial class KampagneView : Window
+    public partial class CampaignView : Window
     {
-        public KampagneView()
+        public CampaignView()
         {
             InitializeComponent();
         }
 
-        private void btnNyKampagne_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-        }
-
-        private void lblProjekt_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
+            NewCampaignView newCampaignView = new NewCampaignView();
+            newCampaignView.Show();
+            
         }
     }
 }

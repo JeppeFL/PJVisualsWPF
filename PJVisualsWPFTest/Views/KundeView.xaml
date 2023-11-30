@@ -7,7 +7,30 @@
         mc:Ignorable="d"
         Title="KundeView" Height="450" Width="800">
     <Grid>
-        <ListBox ItemsSource="{Binding NyKundeVM}" SelectedItem="{Binding SelectedKunde}" Margin="0,0,554,54" BorderBrush="#FFF7F7F7" SelectionChanged="ListBox_SelectionChanged" Background="#FFF7F7F7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.1,0" StartPoint="0.9,1">
+                <GradientStop Color="#FF022E46" Offset="1"/>
+                <GradientStop Color="#FF2BA1E2" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border Height="332" 
+ VerticalAlignment="Top" 
+ CornerRadius="0 0 0 0 " 
+ Background="White"/>
+
+
+
+        <ListBox ItemsSource="{Binding NyKundeVM}" 
+                 SelectedItem="{Binding SelectedKunde}" 
+                 Margin="0,0,554,102" 
+                 BorderBrush="#FFF7F7F7" 
+                 SelectionChanged="ListBox_SelectionChanged" 
+                 Background="#FFF7F7F7">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -16,19 +39,26 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="btnNyKunde" Content="Opret ny kunde!" HorizontalAlignment="Left" Margin="557,374,0,0" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18" FontWeight="Bold" Click="btnNyKunde_Click"/>
-        <Button x:Name="btnGåTilKunde" Content="Gå til kunde" HorizontalAlignment="Left" Margin="0,380,0,0" VerticalAlignment="Top" Height="54" Width="246" FontSize="20" Background="#FF5DA7F1" BorderBrush="#FF5DA7F1" Foreground="White"/>
-        <Label Content="Info" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label x:Name="lblFirma" Content="Firma" HorizontalAlignment="Left" Margin="280,109,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label x:Name="lblNavn" Content="Navn" HorizontalAlignment="Left" Margin="280,174,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="280,232,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblTelefonnummer" Content="Telefon" HorizontalAlignment="Left" Margin="280,290,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="lblSelectedFirma" Content="{Binding SelectedKunde.VirksomhedsNavn, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="353,109,0,0" VerticalAlignment="Top" Width="210" Height="30" />
-        <Label x:Name="lblSelectedNavn" Content="{Binding SelectedKunde.Navn, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="353,174,0,0" VerticalAlignment="Top" Width="210" Height="30"/>
-        <Label x:Name="lblSelectedEmail" Content="{Binding SelectedKunde.Email, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="353,232,0,0" VerticalAlignment="Top" Width="210" Height="30" />
-        <Label x:Name="lblSelectedTelefon" Content="{Binding SelectedKunde.Telefonnummer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="353,290,0,0" VerticalAlignment="Top" Width="210" Height="30"/>
+        <StackPanel>
+        <Button x:Name="btnNyKunde" Content="Opret ny kunde!" HorizontalAlignment="Left" Margin="500,350,0,-54" VerticalAlignment="Top" Height="50" Width="220" Background="White" FontSize="18" FontWeight="Bold" Click="btnNyKunde_Click"/>
+        <Button x:Name="btnGåTilKunde" Content="Gå til kunde" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Height="54" Width="246" FontSize="20" Background="#FF5DA7F1" BorderBrush="#FF5DA7F1" Foreground="White"/>
+        </StackPanel>
 
+        <StackPanel>
+        <Label Content="Info" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Label x:Name="lblFirma" Content="Firma" HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="lblNavn" Content="Navn" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTelefonnummer" Content="Telefon" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel>
+        <Label x:Name="lblSelectedFirma" Content="{Binding SelectedKunde.VirksomhedsNavn, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,100,0,0" VerticalAlignment="Top" Width="210" Height="30" />
+        <Label x:Name="lblSelectedNavn" Content="{Binding SelectedKunde.Navn, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" Width="210" Height="30"/>
+        <Label x:Name="lblSelectedEmail" Content="{Binding SelectedKunde.Email, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalAlignment="Top" Width="210" Height="30" />
+        <Label x:Name="lblSelectedTelefon" Content="{Binding SelectedKunde.Telefonnummer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" Width="210" Height="30"/>
+        </StackPanel>
 
     </Grid>
 </Window>
