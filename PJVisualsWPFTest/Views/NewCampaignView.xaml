@@ -7,6 +7,98 @@
         mc:Ignorable="d"
         Title="NewCampaignView" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.1,0" StartPoint="0.9,1">
+                <GradientStop Color="#FFF6F6F6" Offset="1"/>
+                <GradientStop Color="#FFF6F6F6" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border Height="332" 
+ VerticalAlignment="Top" 
+ CornerRadius="0 0 0 0 " 
+ Background="White">
+
+        </Border>
+
+
+        <Label x:Name="lblKampanger" Content="Kampanger" HorizontalAlignment="Left" Margin="65,19,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Height="58" Width="229" Foreground="#FF2BA1E2" />
+
+        <StackPanel Orientation="Vertical" Margin="50,100,0,0">
+            <Label Content="Firma" FontSize="16" Margin="0,0,0,0"/>
+            <Label Content="Navn" FontSize="16" Margin="0,20,0,0"/>
+            <Label Content="Beløb" FontSize="16" Margin="0,20,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="380,100,0,0">
+            <Label Content="Forfaldsdato" FontSize="16" Margin="0,0,0,0"/>
+            <Label Content="Betalt?" FontSize="16" Margin="0,20,0,0"/>
+            <Label Content="Beskrivelse" FontSize="16" Margin="0,20,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="120,105,0,0">
+            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="25"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="24"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="238" Height="24"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="500,105,0,0">
+            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="25"/>
+            <CheckBox Margin="0,30,0,0" />
+            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="" Width="238" Height="84"/>
+        </StackPanel>
+
+
+        <StackPanel>
+            <Button x:Name="btnNyKundeAnnuler" 
+        Content="Tilbage" 
+        Margin="0,350,400,-54" 
+        Background="White" 
+       
+        BorderThickness=".4" Grid.Row="2"
+        Style="{StaticResource ButtonTheme}"/>
+
+            <Button x:Name="btnNyKundeGem" 
+        Content="Gem kampange" 
         
+        Margin="400,-5,0,0"  
+        Foreground="White" 
+        Background="#FF53AAD8" 
+        BorderThickness="0" 
+        Grid.Row="2" 
+        Width="268"
+        Height="60"
+        FontSize="20"
+        FontWeight="Bold"
+        Command="{Binding}"
+        CommandParameter="{Binding}">
+
+
+                <Button.Effect>
+                    <DropShadowEffect 
+                        Color="Gray" 
+                        BlurRadius="20" 
+                        ShadowDepth="5" 
+                        Opacity=".5" />
+
+                </Button.Effect>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+
+
+
+
+
+
     </Grid>
 </Window>

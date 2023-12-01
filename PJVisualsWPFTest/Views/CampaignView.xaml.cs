@@ -24,11 +24,10 @@ namespace PJVisualsWPFTest.Views
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnNyKampange_Click(object sender, RoutedEventArgs e)
         {
             NewCampaignView newCampaignView = new NewCampaignView();
             newCampaignView.Show();
-            
         }
     }
 }

@@ -7,9 +7,72 @@
         mc:Ignorable="d"
         Title="CampaignView" Height="450" Width="800">
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="599,10,10,207"/>
-        <Button Content="Opret ny kampagne" HorizontalAlignment="Left" Margin="88,272,0,0" VerticalAlignment="Top" Height="50" Width="187" Click="Button_Click"/>
-        <Button Content="Vælg" HorizontalAlignment="Left" Margin="578,277,0,0" VerticalAlignment="Top" Height="41" Width="212"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.1,0" StartPoint="0.9,1">
+                <GradientStop Color="#FFF6F6F6" Offset="1"/>
+                <GradientStop Color="#FFF6F6F6" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border Height="332" 
+                VerticalAlignment="Top" 
+                CornerRadius="0 0 0 0 " 
+                Background="White"/>
+
+
+        <StackPanel>
+            <ListBox
+                
+                Margin="0,0,554,102" 
+                BorderBrush="#FFF7F7F7" 
+                
+                Background="#FFF7F7F7" 
+                Height="330">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding Path=CompanyName }"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel>
+            <Button x:Name="btnNyKampange" 
+               Content="Opret ny kampange" 
+               Margin="0,350,400,-54" 
+               Background="White"
+               Click="btnNyKampange_Click"
+               Style="{StaticResource ButtonTheme}"/>
+
+            <Button x:Name="btnGåTilKampange" 
+               Content="Gå til kampange" 
+               Margin="400,-5,0,0"  
+               Background="#FF53AAD8" 
+               BorderBrush="#FF53AAD8" 
+               Foreground="White"
+               Style="{StaticResource ButtonTheme}"/>
+
+        </StackPanel>
+
+        <StackPanel>
+            <Label Content="Info" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,30,0,0" 
+                   VerticalAlignment="Top" 
+                   FontSize="25" 
+                   FontWeight="Bold" 
+                   Foreground="#FF2BA1E2"/>
+           
+        </StackPanel>
+
+      
 
     </Grid>
 </Window>
