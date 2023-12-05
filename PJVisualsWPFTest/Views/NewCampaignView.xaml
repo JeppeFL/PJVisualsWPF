@@ -41,15 +41,15 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Margin="120,105,0,0">
-            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="25"/>
-            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="24"/>
-            <TextBox HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="238" Height="24"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Customer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="24"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" Width="238" Height="24"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Margin="500,105,0,0">
-            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" Height="25"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding DueDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25"/>
             <CheckBox Margin="0,30,0,0" />
-            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="" Width="238" Height="84"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="238" Height="84"/>
         </StackPanel>
 
 
@@ -64,7 +64,6 @@
 
             <Button x:Name="btnNyKundeGem" 
         Content="Gem kampange" 
-        
         Margin="400,-5,0,0"  
         Foreground="White" 
         Background="#FF53AAD8" 
@@ -74,7 +73,7 @@
         Height="60"
         FontSize="20"
         FontWeight="Bold"
-        Command="{Binding}"
+        Command="{Binding SaveCampaignCmd}"
         CommandParameter="{Binding}">
 
 

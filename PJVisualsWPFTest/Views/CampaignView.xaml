@@ -26,7 +26,8 @@
 
         <StackPanel>
             <ListBox
-                
+                ItemsSource="{Binding NewCampaignVM}" 
+                 SelectedItem="{Binding SelectedCampaign}"
                 Margin="0,0,554,102" 
                 BorderBrush="#FFF7F7F7" 
                 

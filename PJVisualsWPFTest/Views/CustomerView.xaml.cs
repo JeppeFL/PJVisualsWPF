@@ -21,9 +21,10 @@ namespace PJVisualsWPFTest.Views
     /// </summary>
     public partial class CustomerView : Window
     {
-        
+
         NewCustomerViewModel nkvm = new NewCustomerViewModel();
         
+      
         public CustomerView()
         {
             

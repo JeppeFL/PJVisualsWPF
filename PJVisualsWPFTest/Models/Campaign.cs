@@ -18,6 +18,7 @@ namespace PJVisualsWPFTest.Models
         public double Amount { get; set; }
         public DateTime DueDate { get; set; }
         public bool PaymentStatus { get; set; }
+        public string Customer { get; internal set; }
 
         public Campaign (Customer customer, string name, string description, double amount, DateTime DueDate, bool PaymentStatus)
         {
@@ -35,12 +36,13 @@ namespace PJVisualsWPFTest.Models
             return $"{customer.CompanyName},{Name},{Description},{Amount},{DueDate},{PaymentStatus}";
         }
 
-        public Campaign()
+        public Campaign(string customer)
         {
             idCount++;
         }
 
-
-
+        public Campaign(string customer, string name, string description, double amount, DateTime dueDate, bool paymentStatus) : this(customer)
+        {
+        }
     }
 }

@@ -82,6 +82,11 @@ namespace PJVisualsWPFTest.ViewModels
         
         }
 
+       // public NewCustomerViewModel(){}
+        
+        
+
+
         //SelectedKunde
         private NewCustomerViewModel selectedCustomer;
 

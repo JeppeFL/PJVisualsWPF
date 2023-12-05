@@ -19,7 +19,7 @@ namespace PJVisualsWPFTest.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        //true eller false
+        //true or false
         public bool CanExecute(object? parameter)
         {
             bool result = true;
