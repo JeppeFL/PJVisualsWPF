@@ -41,15 +41,15 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Margin="120,105,0,0">
-            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Customer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25"/>
-            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="24"/>
-            <TextBox HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" Width="238" Height="24"/>
+            <TextBox x:Name="tbCompanyName" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Customer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25" TextChanged="tbCompanyName_TextChanged"/>
+            <TextBox x:Name="tbNameCampaign" HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="24" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="tbAmount" HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" Width="238" Height="24" TextChanged="tbAmount_TextChanged"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Margin="500,105,0,0">
-            <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding DueDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25"/>
-            <CheckBox Margin="0,30,0,0" />
-            <TextBox HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="238" Height="84"/>
+            <TextBox x:Name="tbDueDate" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding DueDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="238" Height="25" TextChanged="tbDueDate_TextChanged"/>
+            <CheckBox x:Name="tbPaymentStatus" Margin="0,30,0,0" Checked="tbPaymentStatus_Checked" />
+            <TextBox x:Name="tbDescription" HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="238" Height="84" TextChanged="tbDescription_TextChanged"/>
         </StackPanel>
 
 
@@ -60,9 +60,9 @@
         Background="White" 
        
         BorderThickness=".4" Grid.Row="2"
-        Style="{StaticResource ButtonTheme}"/>
+        Style="{StaticResource ButtonTheme}" Click="btnNyKundeAnnuler_Click"/>
 
-            <Button x:Name="btnNyKundeGem" 
+            <Button x:Name="btnNyKampagneGem" 
         Content="Gem kampange" 
         Margin="400,-5,0,0"  
         Foreground="White" 

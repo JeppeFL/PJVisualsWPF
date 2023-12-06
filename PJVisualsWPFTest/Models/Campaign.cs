@@ -36,13 +36,11 @@ namespace PJVisualsWPFTest.Models
             return $"{customer.CompanyName},{Name},{Description},{Amount},{DueDate},{PaymentStatus}";
         }
 
-        public Campaign(string customer)
+        public Campaign()
         {
             idCount++;
         }
 
-        public Campaign(string customer, string name, string description, double amount, DateTime dueDate, bool paymentStatus) : this(customer)
-        {
-        }
+        
     }
 }
