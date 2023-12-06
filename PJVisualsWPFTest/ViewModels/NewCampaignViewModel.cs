@@ -13,146 +13,106 @@ namespace PJVisualsWPFTest.ViewModels
 {
     class NewCampaignViewModel : INotifyPropertyChanged
     {
-
         private Campaign campaign;
 
-        //Customer / CompanyName
         private string customer;
+
         public string Customer
         {
             get { return customer; }
-            set 
-            { 
+            set
+            {
                 customer = value;
-                OnPropertyChanged("CompanyName");
-
+                OnPropertyChanged("Customer");
             }
         }
 
-        //Name
         private string name;
 
         public string Name
         {
             get { return name; }
-            set 
+            set
             {
-                name = value; 
+                name = value;
                 OnPropertyChanged("Name");
             }
         }
 
-        //Description
         private string description;
 
         public string Description
         {
             get { return description; }
-            set 
-            { 
+            set
+            {
                 description = value;
                 OnPropertyChanged("Description");
-                
             }
         }
 
-        //Amount
         private double amount;
 
         public double Amount
         {
             get { return amount; }
-            set 
-            { 
+            set
+            {
                 amount = value;
                 OnPropertyChanged("Amount");
-
             }
         }
 
-        //DueDate
         private DateTime dueDate;
 
         public DateTime DueDate
         {
             get { return dueDate; }
-            set 
-            { 
+            set
+            {
                 dueDate = value;
                 OnPropertyChanged("DueDate");
-
             }
         }
-        
-        //PaymentStatus
+
         private bool paymentStatus;
 
         public bool PaymentStatus
         {
             get { return paymentStatus; }
-            set 
-            { 
+            set
+            {
                 paymentStatus = value;
                 OnPropertyChanged("PaymentStatus");
             }
-
         }
-
+        public NewCampaignViewModel()
+        {
+            // Initialisér ViewModel som ønsket uden at kræve en eksisterende kampagne.
+        }
 
         public NewCampaignViewModel(Campaign campaign)
         {
-            Customer = campaign.Customer;
+            Customer = campaign.Customer.CompanyName;
             Name = campaign.Name;
             Description = campaign.Description;
             Amount = campaign.Amount;
             DueDate = campaign.DueDate;
             PaymentStatus = campaign.PaymentStatus;
-            
+            this.campaign = campaign;
+
+            SaveCampaignCmd = new SaveCampaignCommand();
         }
 
         public ICommand SaveCampaignCmd { get; set; } = new SaveCampaignCommand();
 
-
-        private CampaignRepository campaignRepository = new CampaignRepository();
-
-        public ObservableCollection<NewCampaignViewModel> NewCampaignVM { get; set; } = new ObservableCollection<NewCampaignViewModel>();
-
-        public NewCampaignViewModel()
-        {
-            foreach (Campaign campaign in campaignRepository.GetAll())
-            {
-                NewCampaignVM.Add(new NewCampaignViewModel(campaign));
-            }
-
-        }
-
-
-
-        private NewCampaignViewModel selectedCampaign;
-
-        public NewCampaignViewModel SelectedCampaign
-        {
-            get { return selectedCampaign; }
-            set { 
-                selectedCampaign = value;
-                OnPropertyChanged("SelectedCampaign");
-            }
-        }
-
-
-
-
-        //EventHandler
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public ObservableCollection<NewCampaignViewModel> NewCampaignVM { get; set; } = new ObservableCollection<NewCampaignViewModel>();
     }
 }

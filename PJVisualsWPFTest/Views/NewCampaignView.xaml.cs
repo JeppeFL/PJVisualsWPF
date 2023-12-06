@@ -26,6 +26,7 @@ namespace PJVisualsWPFTest.Views
         public NewCampaignView()
         {
             InitializeComponent();
+            DataContext = ncvm;
         }
 
         private void btnNyKundeAnnuler_Click(object sender, RoutedEventArgs e)

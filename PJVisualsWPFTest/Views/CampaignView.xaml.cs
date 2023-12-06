@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PJVisualsWPFTest.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace PJVisualsWPFTest.Views
     /// </summary>
     public partial class CampaignView : Window
     {
+        NewCampaignViewModel ncvm = new NewCampaignViewModel();
         public CampaignView()
         {
             InitializeComponent();
+            DataContext = ncvm;
         }
 
         private void btnNyKampange_Click(object sender, RoutedEventArgs e)
