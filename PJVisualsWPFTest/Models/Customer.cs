@@ -9,9 +9,6 @@ namespace PJVisualsWPFTest.Models
 {
     public class Customer
     {
-        private static int idCount = 0;
-
-        public int Id { get; }
         public string CompanyName { get; set; } = "Intet angivet";
         public string Name { get; set; } = "Intet angivet";
         public string Email { get; set; } = "Intet angivet";
@@ -25,16 +22,16 @@ namespace PJVisualsWPFTest.Models
             this.Email = email;
             this.Phone = phone;
 
-        }                                                                                            
+        }
+
+        public Customer()
+        {
+        }
 
         public string MakeTitle()
         {
             return $"{CompanyName},{Name},{Email},{Phone}";
         }
 
-        public Customer() 
-        { 
-            Id = idCount++;
-        }
     }
 }

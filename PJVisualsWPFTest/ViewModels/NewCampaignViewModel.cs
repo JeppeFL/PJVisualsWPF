@@ -93,7 +93,7 @@ namespace PJVisualsWPFTest.ViewModels
 
         public NewCampaignViewModel(Campaign campaign)
         {
-            Customer = campaign.Customer.CompanyName;
+            Customer = campaign.CustomerCampaign;
             Name = campaign.Name;
             Description = campaign.Description;
             Amount = campaign.Amount;
@@ -101,10 +101,10 @@ namespace PJVisualsWPFTest.ViewModels
             PaymentStatus = campaign.PaymentStatus;
             this.campaign = campaign;
 
-            SaveCampaignCmd = new SaveCampaignCommand();
+            //SaveCampaignCmd = new SaveCampaignCommand();
         }
 
-        public ICommand SaveCampaignCmd { get; set; } = new SaveCampaignCommand();
+        //public ICommand SaveCampaignCmd { get; set; } = new SaveCampaignCommand();
 
         public event PropertyChangedEventHandler PropertyChanged;
 

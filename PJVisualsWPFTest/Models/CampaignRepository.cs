@@ -11,6 +11,7 @@ namespace PJVisualsWPFTest.Models
 {
     class CampaignRepository
     {
+        /*
         private const string FilePath = "CampaignRepository.txt";
         private ObservableCollection<Campaign> campaigns = new ObservableCollection<Campaign>();
         private CustomerRepository customerRepository;
@@ -101,5 +102,8 @@ namespace PJVisualsWPFTest.Models
         {
             return campaigns;
         }
+
+        */
     }
+        
 }

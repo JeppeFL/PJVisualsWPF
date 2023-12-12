@@ -9,8 +9,9 @@ using System.Windows.Input;
 
 namespace PJVisualsWPFTest.Commands
 {
-    public class SaveCampaignCommand : ICommand
+    public class SaveCampaignCommand 
     {
+        /*
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
@@ -20,7 +21,7 @@ namespace PJVisualsWPFTest.Commands
         public bool CanExecute(object? parameter)
         {
             bool result = true;
-            /*if (parameter is NewCampaignViewModel campaignViewModel)
+            if (parameter is NewCampaignViewModel campaignViewModel)
             {
                 if(string.IsNullOrEmpty(campaignViewModel.Customer))
                     result = false;
@@ -33,7 +34,7 @@ namespace PJVisualsWPFTest.Commands
                 if(campaignViewModel.DueDate != DateTime.MinValue)
                     result = false;
                        
-            }*/
+            }
 
             return result;
         }
@@ -72,5 +73,6 @@ namespace PJVisualsWPFTest.Commands
                 }
             }
         }
+    */
     }
 }

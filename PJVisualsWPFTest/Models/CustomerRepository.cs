@@ -9,25 +9,20 @@ using System.Xml.Serialization;
 
 namespace PJVisualsWPFTest.Models 
 {
-    public class CustomerRepository
+    public class CustomerRepository //Holder på data om oprettede kunder
     {
 
+        //Listen customList opretter en ny ObservableCollection af klassen Customer 
         private ObservableCollection<Customer> customerList = new ObservableCollection<Customer>();
 
         
+        //Opretter en constructor
         public CustomerRepository()
         {
             GetCustomerFromFile();
         }
 
-        //Finder kunde baseret ud fra virksomhedsnavn, bliver hentet i CampaignRepo
-        public Customer FindCustomerByCompanyName(string companyName)
-        {
-            return customerList.FirstOrDefault(customer => customer.CompanyName == companyName);
-        }
-
-
-
+        
         //Gemmer kunden til tekstfil
         public void SaveCustomerToFile(Customer customer)
         {
@@ -111,5 +106,11 @@ namespace PJVisualsWPFTest.Models
             return customerList; 
         }
 
+        /*Finder kunde baseret ud fra virksomhedsnavn, bliver hentet i CampaignRepo
+        public Customer FindCustomerByCompanyName(string companyName)
+        {
+            return customerList.FirstOrDefault(customer => customer.CompanyName == companyName);
+        }
+        */
     }
 }
