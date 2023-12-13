@@ -52,12 +52,13 @@ namespace PJVisualsWPFTest.Commands
                 CustomerRepository repo = new CustomerRepository();
                 repo.SaveCustomerToFile(newCustomer);
 
+                //Når gemkunde er klikket så sættes den tilbage til udgangspunktet
                 customerViewModel.CompanyName = "";
                 customerViewModel.Name = "";
                 customerViewModel.Email = "";
                 customerViewModel.Phone = "";
 
-                //Når gemkunde er klikket så sættes den tilbage til udgangspunktet
+               
               
 
             }

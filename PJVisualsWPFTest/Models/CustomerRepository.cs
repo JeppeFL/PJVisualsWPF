@@ -16,7 +16,7 @@ namespace PJVisualsWPFTest.Models
         private ObservableCollection<Customer> customerList = new ObservableCollection<Customer>();
 
         
-        //Opretter en constructor
+        //Opretter en constructor, med en metode i constructorkroppen. 
         public CustomerRepository()
         {
             GetCustomerFromFile();
@@ -34,7 +34,7 @@ namespace PJVisualsWPFTest.Models
             }
         }
 
-        //Henter kunden fra 
+        //Henter kunden fra tekstfil
         public void GetCustomerFromFile()
         {
             string filePath = "KundeRepository.txt";
@@ -59,16 +59,13 @@ namespace PJVisualsWPFTest.Models
                             Console.WriteLine("Warning: Line does not contain enough data: " + line);
                         }
 
-
                         line = getCustomer.ReadLine();
-
                     }
                 }
             }
             catch (IOException)
             {
                 throw;
-
             }
         }
         

@@ -37,6 +37,7 @@ namespace PJVisualsWPFTest.ViewModels
                 OnPropertyChanged("Name");
             }
         }
+
         private string email;
         public string Email
         {
@@ -47,6 +48,7 @@ namespace PJVisualsWPFTest.ViewModels
                 OnPropertyChanged("Email");
             }
         }
+
         private string phone;
         public string Phone
         {
@@ -58,6 +60,7 @@ namespace PJVisualsWPFTest.ViewModels
             }
         }
 
+        //Opretter en constructor med parametrene Customer 
         public NewCustomerViewModel(Customer customer)
         {
             CompanyName = customer.CompanyName;
@@ -82,11 +85,7 @@ namespace PJVisualsWPFTest.ViewModels
         
         }
 
-       // public NewCustomerViewModel(){}
-        
-        
-
-
+      
         //SelectedKunde
         private NewCustomerViewModel selectedCustomer;
 
@@ -112,14 +111,5 @@ namespace PJVisualsWPFTest.ViewModels
                 propertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }
